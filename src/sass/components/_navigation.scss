@@ -1,0 +1,78 @@
+/**
+ * Navigation between pages
+ *
+ */
+
+.navigation {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.navigation {
+    display: inline-block;
+}
+
+.enter-up,
+.enter-down,
+.exit-up,
+.exit-down {
+    animation-duration: .8s;
+}
+
+.enter-hyperspace {
+    z-index: 50;
+    display: block;
+    animation: enter-hyperspace 2s 1s;
+}
+
+.exit-hyperspace {
+    transition: all 0.3s cubic-bezier(0.66, 0.04, 1, 0.65);
+    transition-delay: 2s;
+    transform: translateZ(0) scale(50, 50);
+    opacity: 0;
+}
+
+.enter-up {
+    animation-name: enter-up;
+    display: block;
+}
+
+.enter-down {
+    animation-name: enter-down;
+    display: block;
+}
+
+.exit-up {
+    animation-name: exit-up;
+    display: block;
+}
+
+.exit-down {
+    animation-name: exit-down;
+    display: block;
+}
+
+@keyframes enter-hyperspace {
+    0%   { transform: translateZ(0) scale(0, 0); opacity: 0; }
+    100% { transform: translateZ(0) scale(1, 1); opacity: 1; }
+}
+
+@keyframes enter-up {
+    0%   { transform: translateZ(0) translateY(-100%); }
+    100% { transform: translateZ(0) translateY(0%); }
+}
+
+@keyframes enter-down {
+    0%   { transform: translateZ(0) translateY(100%); }
+    100% { transform: translateZ(0) translateY(0%); }
+}
+
+@keyframes exit-up {
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(100%); }
+}
+
+@keyframes exit-down {
+    0%   { transform: translateZ(0) translateY(0%); }
+    100% { transform: translateZ(0) translateY(-100%); }
+}
