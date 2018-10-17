@@ -1,0 +1,34 @@
+{
+  "name": "starwars-music",
+  "version": "0.4.1",
+  "description": "StarWars Music",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "@babel/core": "^7.1.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "babel-eslint": "^10.0.1",
+    "browser-sync": "^2.10.0",
+    "eslint": "^5.7.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src"
+  },
+  "engines": {
+    "node": "10.12.0",
+    "npm": "6.4.1"
+  },
+  "license": "GPL-3.0"
+}

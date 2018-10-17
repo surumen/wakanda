@@ -1,0 +1,165 @@
+
+@mixin all($width) {
+  width: $width;
+  height: $width;
+  position: relative;
+}
+
+@mixin gradient_light() {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+  background: -moz-radial-gradient(center, ellipse cover rgba(246,248,249,0) 0%, rgba(167, 212, 234, 0.09) 50%, rgba(215, 222, 227, 0.19) 51%, rgba(255, 255, 255, 0.02) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(246,248,249,0) 0%, rgba(167, 212, 234, 0.09) 50%, rgba(215, 222, 227, 0.19) 51%, rgba(255, 255, 255, 0.02) 100%); /* Chrome10-25,Safari5.1-6 */
+  background:radial-gradient(ellipse at center, rgba(246,248,249,0) 0%, rgba(167, 212, 234, 0.09) 50%, rgba(215, 222, 227, 0.19) 51%, rgba(255, 255, 255, 0.02) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.episode-2 {
+
+    .drawing {
+        position: absolute;
+        bottom: 55px;
+        left: 215px;
+        right: 215px;
+
+        canvas {
+            width: 100%;
+            height: 430px;
+        }
+    }
+
+    .container_energy {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 30;
+        .left {
+            position: absolute;
+            width: 430px;
+            height: 100%;
+            left: -70px;
+            bottom: -100px;
+
+            .left-hand {
+                position: absolute;
+                bottom: -35px;
+                left: -35px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .middle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 550px;
+            .canvas {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        .right {
+            position: absolute;
+            width: 430px;
+            right: -70px;
+            bottom: -100 px;
+            height: 100%;
+
+            .right-hand {
+                position: absolute;
+                bottom: -35px;
+                right: -35px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+.initiator {
+  @include all(360px);
+}
+
+.area {
+  @include  all(360px);
+  margin:0 auto;
+   -webkit-filter: blur(1px); filter: url(#blur-effect-1);
+}
+
+.energy_ball {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+    border-radius: 50%;
+    margin:auto;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    -webkit-transition:.1s ease all;
+    @include gradient_light();
+}
+
+/* Atom */
+.atome {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    height: 100%;
+    top:0;
+    position: absolute;
+}
+
+.atome-wrap {
+    height: 360px;
+    width: 360px;
+    margin: auto;
+    position: absolute;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: turn 8s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotateX(0deg) rotateZ(0deg);
+        background: none;
+    }
+    100% {
+        transform: rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+.atome-wrap:after,
+.atome-wrap:before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px #000, 0 0 15px #64FFF9, 0 0 30px #64FFF9;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+}
+
+.atome-wrap:before {
+    transform: rotateX(90deg);
+}
